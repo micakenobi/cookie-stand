@@ -17,23 +17,26 @@ var firstAndPike = {
   avgCookies: 6.3,
   totalSales: [],
 
-  calcRandomCustomerPerHour: function(){
+  calcRandomCustomerPerHour: function() {
     return Math.floor(Math.random() * (this.maxCustomer - this.minCustomer + 1)) + this.minCustomer;
   },
-  calcCookieSales: function(){
+  calcCookieSales: function() {
     var hourlySales = (this.avgCookies * this.calcRandomCustomerPerHour());
     return Math.floor(hourlySales);
   },
-  simulatePurchases: function(){
+  simulatePurchases: function() {
     for (var i = 0; i < hours.length; i++) {
       this.totalSales.push(this.calcCookieSales());
     }
   },
 
-  makingList: function(){
+  makingList: function() {
     var body = document.getElementsByTagName('body')[0];
+    var newHeading = document.createElement('h2');
     var UnList = document.createElement('ul');
+    body.appendChild(newHeading);
     body.appendChild(UnList);
+    newHeading.innerText = this.storeName;
     for(var i = 0; i < hours.length; i++){
       var newListItem = document.createElement('li');
       var newText = document.createTextNode(hours[i] + ': ' + this.totalSales[i] + ' cookies');
@@ -44,7 +47,7 @@ var firstAndPike = {
     var totalText = document.createTextNode('Total Cookies: ' + totalSum(this.totalSales));
     newListItem.appendChild(totalText);
     UnList.appendChild(newListItem);
-  }
+  },
 };
 
 firstAndPike.simulatePurchases();
@@ -57,23 +60,26 @@ var seaTacAirport = {
   avgCookies: 1.2,
   totalSales: [],
 
-  calcRandomCustomerPerHour: function(){
+  calcRandomCustomerPerHour: function() {
     return Math.floor(Math.random() * (this.maxCustomer - this.minCustomer + 1)) + this.minCustomer;
   },
-  calcCookieSales: function(){
+  calcCookieSales: function() {
     var hourlySales = (this.avgCookies * this.calcRandomCustomerPerHour());
     return Math.floor(hourlySales);
   },
-  simulatePurchases: function(){
+  simulatePurchases: function() {
     for (var i = 0; i < hours.length; i++) {
       this.totalSales.push(this.calcCookieSales());
     }
   },
 
-  makingList: function(){
+  makingList: function() {
     var body = document.getElementsByTagName('body')[0];
+    var newHeading = document.createElement('h2');
     var UnList = document.createElement('ul');
+    body.appendChild(newHeading);
     body.appendChild(UnList);
+    newHeading.innerText = this.storeName;
     for(var i = 0; i < hours.length; i++){
       var newListItem = document.createElement('li');
       var newText = document.createTextNode(hours[i] + ': ' + this.totalSales[i] + ' cookies');
@@ -97,23 +103,26 @@ var seattleCenter = {
   avgCookies: 1.2,
   totalSales: [],
 
-  calcRandomCustomerPerHour: function(){
+  calcRandomCustomerPerHour: function() {
     return Math.floor(Math.random() * (this.maxCustomer - this.minCustomer + 1)) + this.minCustomer;
   },
-  calcCookieSales: function(){
+  calcCookieSales: function() {
     var hourlySales = (this.avgCookies * this.calcRandomCustomerPerHour());
     return Math.floor(hourlySales);
   },
-  simulatePurchases: function(){
+  simulatePurchases: function() {
     for (var i = 0; i < hours.length; i++) {
       this.totalSales.push(this.calcCookieSales());
     }
   },
 
-  makingList: function(){
+  makingList: function() {
     var body = document.getElementsByTagName('body')[0];
+    var newHeading = document.createElement('h2');
     var UnList = document.createElement('ul');
+    body.appendChild(newHeading);
     body.appendChild(UnList);
+    newHeading.innerText = this.storeName;
     for(var i = 0; i < hours.length; i++){
       var newListItem = document.createElement('li');
       var newText = document.createTextNode(hours[i] + ': ' + this.totalSales[i] + ' cookies');
@@ -137,23 +146,26 @@ var capitolHill = {
   avgCookies: 2.3,
   totalSales: [],
 
-  calcRandomCustomerPerHour: function(){
+  calcRandomCustomerPerHour: function() {
     return Math.floor(Math.random() * (this.maxCustomer - this.minCustomer + 1)) + this.minCustomer;
   },
-  calcCookieSales: function(){
+  calcCookieSales: function() {
     var hourlySales = (this.avgCookies * this.calcRandomCustomerPerHour());
     return Math.floor(hourlySales);
   },
-  simulatePurchases: function(){
+  simulatePurchases: function() {
     for (var i = 0; i < hours.length; i++) {
       this.totalSales.push(this.calcCookieSales());
     }
   },
 
-  makingList: function(){
+  makingList: function() {
     var body = document.getElementsByTagName('body')[0];
+    var newHeading = document.createElement('h2');
     var UnList = document.createElement('ul');
+    body.appendChild(newHeading);
     body.appendChild(UnList);
+    newHeading.innerText = this.storeName;
     for(var i = 0; i < hours.length; i++){
       var newListItem = document.createElement('li');
       var newText = document.createTextNode(hours[i] + ': ' + this.totalSales[i] + ' cookies');
@@ -177,28 +189,31 @@ var alki = {
   avgCookies: 4.6,
   totalSales: [],
 
-  calcRandomCustomerPerHour: function(){
+  calcRandomCustomerPerHour: function() {
     return Math.floor(Math.random() * (this.maxCustomer - this.minCustomer + 1)) + this.minCustomer;
   },
-  calcCookieSales: function(){
+  calcCookieSales: function() {
     var hourlySales = (this.avgCookies * this.calcRandomCustomerPerHour());
     return Math.floor(hourlySales);
   },
-  simulatePurchases: function(){
+  simulatePurchases: function() {
     for (var i = 0; i < hours.length; i++) {
       this.totalSales.push(this.calcCookieSales());
     }
   },
 
-  makingList: function(){
+  makingList: function() {
     var body = document.getElementsByTagName('body')[0];
+    var newHeading = document.createElement('h2');
     var UnList = document.createElement('ul');
+    body.appendChild(newHeading);
     body.appendChild(UnList);
+    newHeading.innerText = this.storeName;
     for(var i = 0; i < hours.length; i++){
       var newListItem = document.createElement('li');
       var newText = document.createTextNode(hours[i] + ': ' + this.totalSales[i] + ' cookies');
-      newListItem.appendChild(newText);
       UnList.appendChild(newListItem);
+      newListItem.appendChild(newText);
     }
     var newListItem = document.createElement('li');
     var totalText = document.createTextNode('Total Cookies: ' + totalSum(this.totalSales));
