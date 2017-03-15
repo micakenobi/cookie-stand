@@ -91,3 +91,22 @@ var seaTacAirport = new Store('SeaTac Airport', 3, 24, 1.2);
 var seattleCenter = new Store('Seattle Center', 11, 38, 3.7);
 var capitolHill = new Store('Capitol Hill', 20, 38, 2.3);
 var alki = new Store('Alki', 2, 16, 4.6);
+
+function generateTableFooter(){
+  var table = document.getElementsByTagName('table')[0];
+  var tfoot = document.createElement('tfoot');
+  var tr = document.createElement('tr');
+  var td = document.createElement('td');
+  table.appendChild(tfoot);
+  tfoot.appendChild(tr);
+  tr.appendChild(td);
+  var textTotal = document.createTextNode('Total');
+  td.appendChild(textTotal);
+  for (var i = 0; i < hours.length + 1; i++) {
+    var td = document.createElement('td');
+    // var timeText = document.createTextNode(hours[i]);
+    // th.appendChild(timeText);
+    tr.appendChild(td);
+  }
+};
+generateTableFooter();
