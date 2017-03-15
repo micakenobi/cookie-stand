@@ -48,10 +48,43 @@ function Store(storeNamePara, minCustomerPara, maxCustomerPara, avgCookiesPara){
   };
 
   this.simulatePurchases();
-  this.makingList();
+  // this.makingList();
 }
 var firstAndPike = new Store('First and Pike', 23, 65, 6.3);
 var seaTacAirport = new Store('SeaTac Airport', 3, 24, 1.2);
 var seattleCenter = new Store('Seattle Center', 11, 38, 3.7);
 var capitolHill = new Store('Capitol Hill', 20, 38, 2.3);
 var alki = new Store('Alki', 2, 16, 4.6);
+
+function generateTableTitle(){
+  var body = document.getElementsByTagName('body')[0];
+  var h4 = document.createElement('h4');
+  var title = document.createTextNode('Cookies Needed By Location Each Day');
+  var table = document.createElement('table');
+  body.appendChild(h4);
+  h4.appendChild(title);
+  body.appendChild(table);
+
+};
+generateTableTitle();
+
+function generateTableHeaders(){
+  var table = document.getElementsByTagName('table')[0];
+  var thead = document.createElement('thead');
+  var tr = document.createElement('tr');
+  var td = document.createElement('td');
+  table.appendChild(thead);
+  thead.appendChild(tr);
+  tr.appendChild(td);
+  for (var i = 0; i < hours.length; i++) {
+    var th = document.createElement('th');
+    var timeText = document.createTextNode(hours[i]);
+    th.appendChild(timeText);
+    tr.appendChild(th);
+  }
+  var thTotal = document.createElement('th');
+  var textTotal = document.createTextNode('Daily Location Total');
+  tr.appendChild(thTotal);
+  thTotal.appendChild(textTotal);
+};
+generateTableHeaders();
