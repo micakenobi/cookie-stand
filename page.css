@@ -2,15 +2,21 @@ h1 {
   font-family: font-family: 'Chelsea Market', cursive;
   color: #FF853B;
 }
-li{
+
+li {
   font-family: sans-serif;
-font-family:
   color: orange;
 }
+
 p {
   font-family: serif;
   color: #B25D29;
 }
-body{
+
+body {
   background-color: #9CFEFF;
+}
+
+table, td, th {
+  border: 1px solid black;
 }
