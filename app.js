@@ -61,7 +61,6 @@ function generateTableTitle(){
   body.appendChild(h4);
   h4.appendChild(title);
   body.appendChild(table);
-
 };
 generateTableTitle();
 
@@ -110,3 +109,5 @@ function generateTableFooter(){
   }
 };
 generateTableFooter();
+
+var form = document.getElementById('theForm')
