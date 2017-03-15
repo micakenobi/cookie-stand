@@ -28,33 +28,30 @@ function Store(storeNamePara, minCustomerPara, maxCustomerPara, avgCookiesPara){
       this.totalSales.push(this.calcCookieSales());
     }
   };
-  this.makingList = function() {
-    var body = document.getElementsByTagName('body')[0];
-    var newHeading = document.createElement('h2');
-    var UnList = document.createElement('ul');
-    body.appendChild(newHeading);
-    body.appendChild(UnList);
-    newHeading.innerText = this.storeName;
-    for(var i = 0; i < hours.length; i++){
-      var newListItem = document.createElement('li');
-      var newText = document.createTextNode(hours[i] + ': ' + this.totalSales[i] + ' cookies');
-      newListItem.appendChild(newText);
-      UnList.appendChild(newListItem);
+  this.render = function() {
+    var table = document.getElementsByTagName('table')[0];
+    var tbody = document.createElement('tbody');
+    var tr = document.createElement('tr');
+    var td = document.createElement('td');
+    var textData = document.createTextNode(this.storeName);
+    table.appendChild(tbody);
+    tbody.appendChild(tr);
+    tr.appendChild(td);
+    td.appendChild(textData);
+    for (var i = 0; i < hours.length; i++) {
+      var td = document.createElement('td');
+      var cookieText = document.createTextNode(this.totalSales[i]);
+      td.appendChild(cookieText);
+      tr.appendChild(td);
     }
-    var newListItem = document.createElement('li');
-    var totalText = document.createTextNode('Total Cookies: ' + totalSum(this.totalSales));
-    newListItem.appendChild(totalText);
-    UnList.appendChild(newListItem);
+    var totalTd = document.createElement('td');
+    var totalText = document.createTextNode(totalSum(this.totalSales));
+    tr.appendChild(totalTd);
+    totalTd.appendChild(totalText);
   };
-
   this.simulatePurchases();
-  // this.makingList();
+  this.render();
 }
-var firstAndPike = new Store('First and Pike', 23, 65, 6.3);
-var seaTacAirport = new Store('SeaTac Airport', 3, 24, 1.2);
-var seattleCenter = new Store('Seattle Center', 11, 38, 3.7);
-var capitolHill = new Store('Capitol Hill', 20, 38, 2.3);
-var alki = new Store('Alki', 2, 16, 4.6);
 
 function generateTableTitle(){
   var body = document.getElementsByTagName('body')[0];
@@ -88,3 +85,9 @@ function generateTableHeaders(){
   thTotal.appendChild(textTotal);
 };
 generateTableHeaders();
+
+var firstAndPike = new Store('First and Pike', 23, 65, 6.3);
+var seaTacAirport = new Store('SeaTac Airport', 3, 24, 1.2);
+var seattleCenter = new Store('Seattle Center', 11, 38, 3.7);
+var capitolHill = new Store('Capitol Hill', 20, 38, 2.3);
+var alki = new Store('Alki', 2, 16, 4.6);
