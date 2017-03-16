@@ -113,10 +113,12 @@ generateTableFooter();
 function generateStoreData(event){
   event.preventDefault();
   var theFormItself = event.target;
-  var storeNamePara = theFormItself.elements['store-name-input'].value;
-  var minCustomerPara = theFormItself.elements['min-cust-input'].value;
-  var maxCustomerPara = theFormItself.elements['max-cust-input'].value;
-  var avgCookiesPara = theFormItself.elements['avgCookies-input'].value;
+  var storeNameInput = theFormItself.elements['store-name-input'].value;
+  var minCustomerInput = theFormItself.elements['min-cust-input'].value;
+  var maxCustomerInput = theFormItself.elements['max-cust-input'].value;
+  var avgCookiesInput = theFormItself.elements['avgCookies-input'].value;
+
+  var formStore = new Store(storeNameInput, minCustomerInput, maxCustomerInput, avgCookiesInput);
 };
 var form = document.getElementById('theForm');
 form.addEventListener('submit', generateStoreData);
