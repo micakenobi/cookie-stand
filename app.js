@@ -119,6 +119,8 @@ function generateStoreData(event){
   var avgCookiesInput = theFormItself.elements['avgCookies-input'].value;
 
   var formStore = new Store(storeNameInput, minCustomerInput, maxCustomerInput, avgCookiesInput);
+
+  form.reset();
 };
 var form = document.getElementById('theForm');
 form.addEventListener('submit', generateStoreData);
