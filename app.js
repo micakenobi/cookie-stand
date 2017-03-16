@@ -110,4 +110,13 @@ function generateTableFooter(){
 };
 generateTableFooter();
 
-var form = document.getElementById('theForm')
+function generateStoreData(event){
+  event.preventDefault();
+  var theFormItself = event.target;
+  var storeNamePara = theFormItself.elements['store-name-input'].value;
+  var minCustomerPara = theFormItself.elements['min-cust-input'].value;
+  var maxCustomerPara = theFormItself.elements['max-cust-input'].value;
+  var avgCookiesPara = theFormItself.elements['avgCookies-input'].value;
+};
+var form = document.getElementById('theForm');
+form.addEventListener('submit', generateStoreData);
