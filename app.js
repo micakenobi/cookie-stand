@@ -130,7 +130,6 @@ function generateStoreData(event){
   var formStore = new Store(storeNameInput, minCustomerInput, maxCustomerInput, avgCookiesInput);
 
   var footerTds = document.getElementById('footerElement').childNodes;
-  debugger;
   for (var i = 1; i < footerTds.length - 1; i++) {
     footerTds[i].textContent = cookieHourTotals[i - 1];
   }
