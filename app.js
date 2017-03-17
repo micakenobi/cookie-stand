@@ -1,11 +1,13 @@
 'use strict';
 
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+var cookieHourTotals = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
-var totalSum = function(totalSales){
+// This function outputs the total sum for a given array.
+var totalSum = function(totalSalesInput){
   var retvalue = 0;
-  for (var i = 0; i < totalSales.length; i++){
-    retvalue += totalSales[i];
+  for (var i = 0; i < totalSalesInput.length; i++){
+    retvalue += totalSalesInput[i];
   }
   return retvalue;
 };
@@ -25,7 +27,9 @@ function Store(storeNamePara, minCustomerPara, maxCustomerPara, avgCookiesPara){
   };
   this.simulatePurchases = function() {
     for (var i = 0; i < hours.length; i++) {
-      this.totalSales.push(this.calcCookieSales());
+      var hourlyCookies = this.calcCookieSales();
+      this.totalSales.push(hourlyCookies);
+      cookieHourTotals[i] += hourlyCookies;
     }
   };
   this.render = function() {
@@ -95,18 +99,23 @@ function generateTableFooter(){
   var table = document.getElementsByTagName('table')[0];
   var tfoot = document.createElement('tfoot');
   var tr = document.createElement('tr');
+  tr.setAttribute('id', 'footerElement');
   var td = document.createElement('td');
   table.appendChild(tfoot);
   tfoot.appendChild(tr);
   tr.appendChild(td);
   var textTotal = document.createTextNode('Total');
   td.appendChild(textTotal);
-  for (var i = 0; i < hours.length + 1; i++) {
+  for (var i = 0; i < hours.length; i++) {
     var td = document.createElement('td');
-    // var timeText = document.createTextNode(hours[i]);
-    // th.appendChild(timeText);
+    var timeText = document.createTextNode(cookieHourTotals[i]);
+    td.appendChild(timeText);
     tr.appendChild(td);
   }
+  var td2 = document.createElement('td');
+  var textTotal2 = document.createTextNode(totalSum(cookieHourTotals));
+  td2.appendChild(textTotal2);
+  tr.appendChild(td2);
 };
 generateTableFooter();
 
@@ -120,6 +129,11 @@ function generateStoreData(event){
 
   var formStore = new Store(storeNameInput, minCustomerInput, maxCustomerInput, avgCookiesInput);
 
+  var footerTds = document.getElementById('footerElement').childNodes;
+  for (var i = 1; i < footerTds.length - 1; i++) {
+    footerTds[i].textContent = cookieHourTotals[i - 1];
+  }
+  footerTds[footerTds.length - 1].textContent = totalSum(cookieHourTotals);
   form.reset();
 };
 var form = document.getElementById('theForm');
