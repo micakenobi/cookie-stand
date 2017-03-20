@@ -2,69 +2,81 @@
   background-color: grey;
   overflow: hidden;
   font-family: Helvetica;
-
 }
+
 .nav {
   float: left;
   height: 42px;
   padding: 0 20px;
   text-decoration: none;
 }
+
 #nav-bar {
   text-decoration: none;
 }
+
 h1 {
   font-family: 'Chelsea Market', cursive;
   color: #FF853B;
 }
+
 ul {
   list-style: none;
 }
+
 section.contact{
-  display: block;
+  display: inline-block;
 }
+
 .address {
-  padding-left: 23px;
   font-family: sans-serif;
   color: orange;
-  padding-bottom: 5px;
 }
+
 .address2 {
   font-family: sans-serif;
   color: orange;
-  padding-bottom: 5px;
 }
+
 .day {
-  padding-left: 30px;
   font-family: sans-serif;
   color: orange;
-  padding-bottom: 5px;
 }
+
 .day2 {
-  padding-left: 25px;
   font-family: sans-serif;
   color: orange;
-  padding-bottom: 5px;
 }
+
 .open2 {
-  padding-left: 40px;
   font-family: sans-serif;
   color: orange;
-  padding-bottom: 5px;
 }
+
 .phone {
-  padding-left: 23px;
   font-family: sans-serif;
   color: orange;
-  padding-bottom: 5px;
 }
+
 p {
   font-family: serif;
   color: #B25D29;
 }
+
 body{
     background-color: #F4F4F4;
 }
+
 table, td, th {
   border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th{
+  background-color: grey;
+}
+
+#theForm{
+  display: inline-block;
+  color: orange;
 }

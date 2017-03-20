@@ -3,7 +3,6 @@
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 var cookieHourTotals = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
-// This function outputs the total sum for a given array.
 var totalSum = function(totalSalesInput){
   var retvalue = 0;
   for (var i = 0; i < totalSalesInput.length; i++){
