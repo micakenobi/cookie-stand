@@ -1,23 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
 #nav-bar {
   background-color: grey;
-  overflow: hidden;
+  overflow: auto;
   font-family: Helvetica;
+  height: 42px;
 }
 
 .nav {
-  float: left;
+  width: 8%;
+  height: 100%;
+  display: inline-block;
+  text-align: center;
   height: 42px;
-  padding: 0 20px;
-  text-decoration: none;
+  min-height: 100%;
+  vertical-align: middle;
+  transition: background-color 0.3s, color 0.3s, font-weight 0.3s;
 }
 
-#nav-bar {
+.nav:hover {
+  background-color: #F4F4F4;
+  color: #FF853B;
+  font-weight: 800;
+}
+
+#nav-bar a {
   text-decoration: none;
+  vertical-align: middle;
+  height: 42px;
+  min-height: 100%;
 }
 
 h1 {
   font-family: 'Chelsea Market', cursive;
   color: #FF853B;
+  text-align: center;
 }
 
 ul {
