@@ -33,6 +33,17 @@
   min-height: 100%;
 }
 
+#logo {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+}
+
+#logo img {
+  margin: auto;
+}
+
 h1 {
   font-family: 'Chelsea Market', cursive;
   color: #FF853B;
